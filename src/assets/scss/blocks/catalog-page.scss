@@ -1,0 +1,285 @@
+.catalog-page {
+  padding-bottom: 6rem;
+}
+
+.catalog-page__header {
+  position: relative;
+
+  padding: 12rem 0 3rem;
+  margin-bottom: 8.8rem;
+
+  // background-image: url(./images/catalog-page/cp-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include breakpoint($sm-bp) {
+    padding: 10rem 0 3rem;
+    margin-bottom: 3rem;
+    background-position: -50rem 0;
+  }
+
+  .breadcrumb * {
+    color: white;
+  }
+  .breadcrumb span {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .page-title {
+    color: white;
+    margin-bottom: 12rem;
+
+    @include breakpoint($sm-bp) {
+      margin-bottom: 5rem;
+    }
+  }
+}
+
+.cp-content__header {
+  margin-bottom: 4rem;
+
+  @include breakpoint($sm-bp) {
+    position: relative;
+  }
+}
+
+.filter-mob__header {
+  display: none;
+
+  @include breakpoint($sm-bp) {
+    display: block;
+  }
+
+  .filter-mob__header-back {
+    width: 3.2rem;
+    height: 3.2rem;
+
+    transform: rotate(90deg);
+
+    fill: $primary;
+    cursor: pointer;
+
+    margin-bottom: 2.4rem;
+
+    &:hover {
+      fill: $accent;
+    }
+  }
+
+  .filter-mob__header-title {
+    font-family: "Pribambas";
+    font-weight: 400;
+    font-size: 4.8rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    line-height: 1;
+
+    margin-bottom: 2.4rem;
+  }
+}
+
+.cp-content__inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+
+  margin-bottom: 4rem;
+
+  @include breakpoint($sm-bp) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.catalog-page__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.catalog-page__nav-item {
+  width: 3.8rem;
+  height: 3.8rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: $primary;
+
+  border-radius: 50%;
+  border: 1px solid #ccc6c3;
+  background-color: transparent;
+
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: $accent;
+  }
+
+  &:not(.disable):hover {
+    svg {
+      fill: $accent;
+    }
+  }
+
+  &:first-child,
+  &:last-child {
+    border: none;
+  }
+
+  &:first-child {
+    margin-right: 0.4rem;
+  }
+  &:last-child {
+    margin-left: 0.4rem;
+  }
+
+  &.active {
+    color: white;
+
+    border-color: $accent;
+    background-color: $accent;
+  }
+
+  &.disable {
+    svg {
+      fill: #eceae9;
+    }
+  }
+
+  svg {
+    width: 2.4rem;
+    height: 2.4rem;
+
+    fill: $primary;
+  }
+
+  .cp-nav__icon-prev {
+    transform: rotate(180deg);
+  }
+}
+
+.catalog-page__content {
+  position: relative;
+}
+
+.cp-content__brands-trigger {
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: $primary;
+
+  margin-bottom: 2.4rem;
+
+  @include breakpoint($sm-bp) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 1.5rem;
+
+    cursor: pointer;
+
+    border-bottom: 1px solid #9c97ba;
+
+    &.active {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  svg {
+    display: none;
+
+    width: 2.4rem;
+    height: 2.4rem;
+
+    @include breakpoint($sm-bp) {
+      display: block;
+    }
+  }
+}
+
+.cp-filter__brands {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.7rem 1.4rem;
+
+  margin-bottom: 7rem;
+
+  @include breakpoint($sm-bp) {
+    display: none;
+
+    position: absolute;
+    top: 5.2rem;
+    left: 0;
+    z-index: 4;
+
+    flex-wrap: nowrap;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    width: 100%;
+    height: 41rem;
+    overflow-y: auto;
+
+    padding: 2.5rem 1.6rem;
+
+    background: #ffffff;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+
+    &.active {
+      display: flex;
+    }
+  }
+
+  &.show-more {
+    @media (min-width: 501px) {
+      .cp-filter__brands-item:nth-child(n + 18) {
+        display: none;
+      }
+    }
+  }
+}
+
+.cp-filter__brands-item {
+  color: $primary;
+
+  padding: 1.2rem 1.3rem;
+
+  border: 1px solid $primary;
+  border-radius: 4rem;
+
+  @include breakpoint($sm-bp) {
+    border: none;
+
+    padding: 0;
+  }
+
+  &:hover {
+    border-color: $accent;
+
+    color: $accent;
+  }
+}
+
+.cp-content__more-btn {
+  width: max-content;
+  height: auto;
+
+  padding: 1.2rem 1.3rem;
+
+  color: $accent;
+
+  border-color: $accent;
+
+  @include breakpoint($sm-bp) {
+    display: none;
+  }
+}
+
+.cp-cp-content__filter {
+  margin-bottom: 4rem;
+}
