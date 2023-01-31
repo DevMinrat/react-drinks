@@ -26,14 +26,17 @@ function Product() {
                   className="pi-data__btn hollow-btn"
                   type="radio"
                   name="country"
+                  id="cola-usa"
+                  defaultChecked
                 />
-                США
+                <label htmlFor="cola-usa">США</label>
                 <input
                   className="pi-data__btn hollow-btn"
                   type="radio"
                   name="country"
+                  id="cola-poland"
                 />
-                Польша
+                <label htmlFor="cola-poland">Польша</label>
               </div>
             </div>
             <div className="pi-data__row">
@@ -43,20 +46,24 @@ function Product() {
                   className="pi-data__btn hollow-btn"
                   type="radio"
                   name="volume"
+                  id="cola-250"
+                  defaultChecked
                 />
-                250
+                <label htmlFor="cola-250">250</label>
                 <input
                   className="pi-data__btn hollow-btn"
                   type="radio"
                   name="volume"
+                  id="cola-500"
                 />
-                500
+                <label htmlFor="cola-500">500</label>
                 <input
                   className="pi-data__btn hollow-btn"
                   type="radio"
                   name="volume"
+                  id="cola-1000"
                 />
-                1000
+                <label htmlFor="cola-1000">1000</label>
               </div>
             </div>
           </div>

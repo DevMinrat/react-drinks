@@ -51,22 +51,6 @@
   flex-wrap: wrap;
   gap: 1rem;
 }
-.pi-data__btn {
-  width: unset;
-  max-width: unset;
-  height: 3rem;
-
-  padding: 0.5rem 3.5rem;
-
-  border: 0.1rem solid #ccc6c3;
-  border-radius: 0.4rem;
-
-  &:hover {
-    color: white;
-    background-color: $primary;
-    border-color: $primary;
-  }
-}
 .pi-data__order {
   display: flex;
   flex-direction: column;
@@ -85,5 +69,41 @@
 
   &:hover {
     color: $primary;
+  }
+}
+
+.pi-data__btn {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+
+  & + label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+
+    color: $primary;
+
+    width: unset;
+    max-width: unset;
+    height: 3rem;
+
+    padding: 0.5rem 3.5rem;
+
+    border: 0.1rem solid #ccc6c3;
+    border-radius: 0.4rem;
+
+    &:hover {
+      color: white;
+      background-color: $primary;
+      border-color: $primary;
+    }
+  }
+
+  &:checked + label {
+    color: white;
+    background-color: $primary;
+    border-color: $primary;
   }
 }
