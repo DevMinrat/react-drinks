@@ -4,6 +4,8 @@ import Footer from "./components/footer/Footer";
 import Filter from "./components/filter/Filter";
 import Product from "./components/product/Product";
 
+import products from "./assets/products.json";
+
 function App() {
   return (
     <div className="page">
@@ -31,7 +33,9 @@ function App() {
             <div className="catalog-page__content cp-content">
               <Filter />
               <div className="cp-content__inner">
-                <Product />
+                {products.map((obj) => {
+                  return <Product key={obj.id} props={obj} />;
+                })}
               </div>
               <div className="catalog-page__nav">
                 <span className="catalog-page__nav-item disable">
