@@ -1,12 +1,27 @@
+import React from "react";
+
 import SvgSprite from "./components/SvgSprite";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Filter from "./components/filter/Filter";
 import Product from "./components/product/Product";
+import Sort from "./components/sort/Sort";
 
-import products from "./assets/products.json";
+// import products from "./assets/products.json";
 
 function App() {
+  const [items, setItems] = React.useState([]);
+
+  try {
+    fetch("https://63bd3851d6600623889de097.mockapi.io/items")
+      .then((response) => {
+        return response.json();
+      })
+      .then((res) => setItems(res));
+  } catch (error) {
+    console.log(error);
+  }
+
   return (
     <div className="page">
       <SvgSprite />
@@ -32,9 +47,11 @@ function App() {
           <div className="container">
             <div className="catalog-page__content cp-content">
               <Filter />
+              <Sort />
+
               <div className="cp-content__inner">
-                {products.map((obj) => {
-                  return <Product key={obj.id} props={obj} />;
+                {items.map((obj) => {
+                  return <Product key={obj.id} {...obj} />;
                 })}
               </div>
               <div className="catalog-page__nav">

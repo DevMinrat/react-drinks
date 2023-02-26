@@ -1,0 +1,62 @@
+.sort {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 2.5rem;
+
+  margin-bottom: 7rem;
+}
+
+.sort-title {
+  font-size: 1.8rem;
+  color: $primary;
+}
+
+.sort-select {
+  width: 100%;
+  max-width: 11rem;
+}
+
+.sort-select__selected {
+  font-weight: 500;
+  font-size: 1.8rem;
+  color: $accent;
+  cursor: pointer;
+
+  user-select: none;
+}
+
+.sort-select__modal {
+  position: absolute;
+  top: 3rem;
+
+  display: grid;
+  gap: 1rem;
+
+  width: max-content;
+
+  color: $primary;
+  font-size: 1.8rem;
+
+  padding: 2rem;
+
+  background: #ffffff;
+  box-shadow: 0px 0.6rem 1rem rgba(0, 0, 0, 0.15);
+  border-radius: 0.6rem;
+
+  button {
+    text-align: left;
+    background: transparent;
+    border: none;
+    outline: none;
+
+    transition: all 0.1s linear;
+
+    &:hover, &.active {
+      color: $accent;
+    }
+  }
+}
