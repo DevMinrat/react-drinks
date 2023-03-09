@@ -6,21 +6,25 @@ import Footer from "./components/footer/Footer";
 import Filter from "./components/filter/Filter";
 import Product from "./components/product/Product";
 import Sort from "./components/sort/Sort";
+import ProductSkeleton from "./components/product/ProductSkeleton";
 
 // import products from "./assets/products.json";
 
 function App() {
-  const [items, setItems] = React.useState([]);
+  const [items, setItems] = React.useState([...new Array(3)]);
+  const [loading, setLoading] = React.useState(true);
 
-  try {
+  React.useEffect(() => {
     fetch("https://63bd3851d6600623889de097.mockapi.io/items")
       .then((response) => {
         return response.json();
       })
-      .then((res) => setItems(res));
-  } catch (error) {
-    console.log(error);
-  }
+      .then((res) => {
+        setItems(res);
+        setLoading(false);
+      })
+      .catch((error) => console.error(error));
+  }, []);
 
   return (
     <div className="page">
@@ -50,9 +54,11 @@ function App() {
               <Sort />
 
               <div className="cp-content__inner">
-                {items.map((obj) => {
-                  return <Product key={obj.id} {...obj} />;
-                })}
+                {loading
+                  ? items.map((_, index) => (
+                      <ProductSkeleton key={`${index}-skeleton`} />
+                    ))
+                  : items.map((obj) => <Product key={obj.id} {...obj} />)}
               </div>
               <div className="catalog-page__nav">
                 <span className="catalog-page__nav-item disable">
