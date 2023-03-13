@@ -538,3 +538,22 @@
     margin: 0 auto;
   }
 }
+
+.shop-btn {
+  background: none;
+  border: none;
+  outline: none;
+
+  svg {
+    width: 2.8rem;
+    height: 2.8rem;
+
+    fill: $primary;
+  }
+
+  &:hover {
+    svg {
+      fill: $secondary;
+    }
+  }
+}

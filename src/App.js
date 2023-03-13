@@ -7,6 +7,8 @@ import Filter from "./components/filter/Filter";
 import Product from "./components/product/Product";
 import Sort from "./components/sort/Sort";
 import ProductSkeleton from "./components/product/ProductSkeleton";
+import ProductPage from "./components/productPage/ProductPage";
+import Cart from "./components/cart/Cart";
 
 // import products from "./assets/products.json";
 
@@ -87,6 +89,8 @@ function App() {
         </section>
       </main>
       <Footer />
+      {/* <ProductPage /> */}
+      <Cart />
     </div>
   );
 }

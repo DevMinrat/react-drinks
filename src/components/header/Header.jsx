@@ -73,6 +73,11 @@ const Header = () => {
               <a className="header-links__lang" href="#1">
                 Eng
               </a>
+              <button className="shop-btn">
+                <svg>
+                  <use href="#shop-cart"></use>
+                </svg>
+              </button>
               <div className="header-links__soc-mob footer-info__soc">
                 <a className="footer-info__soc-link soc-link--wsp" href="#1">
                   <svg>
