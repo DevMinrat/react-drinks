@@ -1,13 +1,15 @@
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <header className="header">
       <div className="container">
         <div className="header__inner">
-          <a className="header__logo" href="#1">
+          <Link to="/" className="header__logo">
             <svg>
               <use href="#logo" className="logo-use"></use>
             </svg>
-          </a>
+          </Link>
           <nav className="menu">
             <div className="menu__nav-list">
               <div className="nav-list__item nav-list__item--dropdown">
